@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Mocha Tests</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./MochaInBrowser.css" />
+    <link rel="stylesheet" href="../../node_modules/mocha/mocha.css" />
+  </head>
+  <body id="MochaInBrowserBody">
+    <div id="mocha"></div>
+    <!-- Graphviz renderings go in here -->
+    <div id="graph" style="text-align: center"></div>
+
+    <!-- TODO: We sould like to use the npm versions of these files but can't
+     figure out how to do that yet. -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://unpkg.com/@hpcc-js/wasm@0.3.11/dist/index.min.js"></script>
+    <script src="https://unpkg.com/d3-graphviz@3.0.5/build/d3-graphviz.js"></script>
+
+    <script src="MochaInBrowserInit.ts"></script>
+    <script src="AllTests.ts"></script>
+    <script src="MochaInBrowserExec.ts"></script>
+  </body>
+</html>

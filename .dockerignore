@@ -1,0 +1,8 @@
+*
+!*.json
+!.git/HEAD
+!.git/refs/heads
+!.sentry-upload-token
+!default.nix
+!src
+!tailwind.config.js

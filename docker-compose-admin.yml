@@ -1,0 +1,14 @@
+# docker-compose doesn't allow us to specify that some services shouldn't be
+# started automatically. Instead, we have to put these admin services in a
+# separate file.
+version: "3.1"
+services:
+# This runs as a service in the cluster now.
+
+  admin:
+    build:
+      context: .
+      dockerfile: src/server/admin/Dockerfile
+    image: admin
+    env_file:
+      - src/server/common/dbClient.env
