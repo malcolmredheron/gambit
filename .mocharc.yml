@@ -1,3 +1,0 @@
-# This allows tested ts files to import css files without confusing node when
-# running tests.
-require: "ignore-styles"

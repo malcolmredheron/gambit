@@ -1,0 +1,21 @@
+version: '3'
+services:
+  gambit-app:
+    build: .
+    ports:
+      - "443:443"
+    environment:
+      NODE_ENV: production
+      PORT: 443
+    command: npm build && npm run prod
+    depends_on:
+      - postgres
+    volumes:
+      - .:/app
+
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: gambit
+      POSTGRES_PASSWORD: gambit
+      POSTGRES_DB: gambit

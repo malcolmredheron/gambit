@@ -1,0 +1,47 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sequelize": "npx sequelize-cli",
+    "migrate": "npm run sequelize -- db:migrate",
+    "migrate:undo": "npm run sequelize -- db:migrate:undo",
+    "db:generate": "npm run sequelize -- model:generate --name",
+    "start": "node dist/server.js",
+    "dev": "nodemon src/server.ts src/global.d.ts",
+    "prod": "NODE_ENV=PRODUCTION node dist/server.js",
+    "test": "jest",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/pg": "^8.11.0",
+    "axios": "^1.6.7",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.9.1",
+    "pg": "^8.11.3",
+    "sequelize": "^6.36.0",
+    "sequelize-typescript": "^2.1.6"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.12",
+    "@types/jsonwebtoken": "^9.0.5",
+    "@types/node": "^20.11.16",
+    "@types/sequelize": "^4.28.20",
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.3",
+    "supertest": "^6.3.4",
+    "ts-jest": "^29.1.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
