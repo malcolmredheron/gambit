@@ -1,0 +1,25 @@
+version: '3'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      NODE_ENV: DEVELOPMENT
+      PORT: 8080
+    command: tail -f /dev/null 
+    depends_on:
+      - postgres
+    volumes:
+      - .:/app
+    container_name: gambit.web
+
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: gambit
+      POSTGRES_PASSWORD: gambit
+      POSTGRES_DB: gambit
+    container_name: gambit.db
